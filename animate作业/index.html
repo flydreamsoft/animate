@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.clear:after{
+				content: "";
+				display: block;
+				 clear: both;
+				 
+			}
+			.left{
+				float: left;
+			}
+			.box{
+				width:400px;
+				height: 200px;
+				/*border: 1px solid red;*/
+				position: relative;
+				margin: 100px auto;
+				background-image: url(img/bg.jpg);
+				background-repeat: no-repeat;
+				background-position: 0px -20px;
+				-webkit-animation: name 1s linear infinite ;
+				
+			}
+			@-webkit-keyframes name{
+				
+				0%{
+					background-position: 0px -10px;
+				}
+				10%{
+					background-position: -30px -10px;
+				}
+				20%{
+					background-position: -60px -10px;
+				}
+				30%{
+					background-position: -90px -10px;
+				}
+				40%{
+					background-position: -120px -10px;
+				}
+				50%{
+					background-position: -150px -10px;
+				}
+				60%{
+					background-position: -180px -10px;
+				}
+				70%{
+					background-position: -210px -10px;
+				}
+				80%{
+					background-position: -240px -10px;
+				}
+				90%{
+					background-position: -270px -10px;
+				}
+				100%{
+					background-position: -300px -10px;
+				}
+			}
+			.it-group{
+				width:200px;
+				height: 200px;
+				
+				/*background-color: red;*/
+			}
+			.it-group .item{
+				width: 200px;
+				height:200px;
+				position: absolute;
+				left: 0;
+				top:45px;
+				display: none;
+				
+			}
+			.item img{
+				width: inherit;
+				height: inherit;
+			}
+			.p-group{
+				width: 200px;
+				height: 200px;
+				/*background-color: green;*/
+				
+			}
+			.people{
+				width: 122px;
+				height: 104px;
+				position: absolute;
+				top: 70px;
+				left: 200px;
+				display: none;
+				
+			}
+			.people img{
+				width: inherit;
+				height: inherit;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box clear">
+			
+				
+			
+			<div class="it-group left">
+				<div class="item"><img src="img/qilin1.png"/></div>
+				<div class="item"><img src="img/qilin2.png"/></div>
+				<div class="item"><img src="img/qilin3.png"/></div>
+				<div class="item"><img src="img/qilin4.png"/></div>
+				<div class="item"><img src="img/qilin5.png"/></div>
+				<div class="item"><img src="img/qilin6.png"/></div>
+				
+			</div>
+			<div class="p-group left">
+				<div class="people"><img src="img/p1.png"/></div>
+				<div class="people"><img src="img/p2.png"/></div>
+				<div class="people"><img src="img/p3.png"/></div>
+				<div class="people"><img src="img/p4.png"/></div>
+				<div class="people"><img src="img/p5.png"/></div>
+				<div class="people"><img src="img/p6.png"/></div>
+				<div class="people"><img src="img/p7.png"/></div>
+				<div class="people"><img src="img/p8.png"/></div>
+				<div class="people"><img src="img/p9.png"/></div>
+			</div>
+		</div>
+		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var item = $(".item");
+			var people =$(".people");
+			var peopleCount = people.length;
+			var count = item.length;
+			var index =0;
+			var peopleIndex = 0;
+			setInterval(function(){
+				index = (index+1)%count;
+				item.eq(index).show();
+				item.eq(index-1).hide();
+			},150);
+					
+			setInterval(function(){
+				peopleIndex = (peopleIndex+1)%peopleCount;
+				people.eq(peopleIndex).show();
+				people.eq(peopleIndex-1).hide();
+			},100);		
+					
+					
+					
+					
+		
+		</script>
+	</body>
+</html>
